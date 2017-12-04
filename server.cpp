@@ -341,6 +341,23 @@ int openPoseTutorialThread3()
     // Return successful message
     return 0;
 }
+
+std::vector<UserPoint> getKeyPoints(Mat frame){
+    UserPoint testData,testData2;
+    testData.body.x = 100;
+    testData.body.y = 200;
+    testData.rightHand.x = 300;
+    testData.rightHand.y = 400;
+    testData2.body.x = 102;
+    testData2.body.y = 202;
+    testData2.rightHand.x = 302;
+    testData2.rightHand.y = 402;
+    std::vector<UserPoint> userKeyPoints;
+    userKeyPoints.push_back(testData);
+    userKeyPoints.push_back(testData2); 
+    return userKeyPoints;
+}
+
 void* transfer(void*)
 {
         openPoseTutorialThread3();
@@ -351,8 +368,10 @@ int main(int argc, char *argv[])
 {
     // Parsing command line flags
     gflags::ParseCommandLineFlags(&argc, &argv, true);
+    namedWindow("recv",CV_WINDOW_AUTOSIZE);
 
-       try {
+       try 
+       {
 
         pthread_t serverThread;
         int sockfd=socket(AF_INET,SOCK_STREAM,0);
