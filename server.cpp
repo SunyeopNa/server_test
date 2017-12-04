@@ -171,7 +171,7 @@ class WUserOutput : public op::WorkerConsumer<std::shared_ptr<std::vector<op::Da
 public:
     void initializationOnThread() {}
 
-    void workConsumer(const std::shared_ptr<std::vector<op:Datum>>& datumsPtr)
+    void workConsumer(const std::shared_ptr<std::vector<op::Datum>>& datumsPtr)
     {
         try
         {
