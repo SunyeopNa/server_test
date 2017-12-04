@@ -80,7 +80,7 @@ DEFINE_bool(fullscreen,                 false,          "Run in full-screen mode
 class WUserInput : public op::WorkerProducer<std::shared_ptr<std::vector<op::Datum>>>
 {
 public:
-    /*
+
     WUserInput(const std::string& directoryPath) :
         mImageFiles{op::getFilesOnDirectory(directoryPath, "jpg")},
         mCounter{0}
@@ -88,7 +88,7 @@ public:
         if (mImageFiles.empty())
             op::error("No images found on: " + directoryPath, __LINE__, __FUNCTION__, __FILE__);
     }
-    */
+
     void initializationOnThread() {}
 
     std::shared_ptr<std::vector<op::Datum>> workProducer()
