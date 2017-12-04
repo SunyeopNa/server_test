@@ -368,7 +368,7 @@ int main(int argc, char *argv[])
 {
     // Parsing command line flags
     gflags::ParseCommandLineFlags(&argc, &argv, true);
-    namedWindow("recv",CV_WINDOW_AUTOSIZE);
+  //  namedWindow("recv",CV_WINDOW_AUTOSIZE);
 
        try 
        {
