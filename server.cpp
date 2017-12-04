@@ -255,6 +255,11 @@ int openPoseTutorialThread3()
     // Return successful message
     return 0;
 }
+void* transfer(void*)
+{
+        openPoseTutorialThread3();
+}
+
 
 int main(int argc, char *argv[])
 {
